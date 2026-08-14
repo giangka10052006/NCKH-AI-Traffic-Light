@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!-- Author: Tong Chi Cao -->
+<!-- Scenario: Single-Direction Extreme Jam with Emergency Vehicle -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    
+    <!-- 1. ĐỊNH NGHĨA CÁC LOẠI PHƯƠNG TIỆN -->
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="13.89"/>
+    <vType id="ambulance" vClass="emergency" guiShape="emergency" accel="3.0" decel="5.0" maxSpeed="20.0" color="red"/>
+
+    <!-- 2. LƯU LƯỢNG NỀN -->
+    
+    <!-- HƯỚNG BẮC (UL2): Giữ nguyên lưu lượng đông đúc -->
+    <flow id="f_UL2_right" type="car" begin="0.00" end="3600.00" perHour="300.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_UL2_straight" type="car" begin="0.00" end="3600.00" perHour="500.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_UL2_left" type="car" begin="0.00" end="3600.00" perHour="300.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+
+    <!-- HƯỚNG NAM (DR2): Giảm tối đa (Gần như đường trống) -->
+    <flow id="f_DR2_right" type="car" begin="0.00" end="3600.00" perHour="200.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_DR2_straight" type="car" begin="0.00" end="3600.00" perHour="300.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_DR2_left" type="car" begin="0.00" end="3600.00" perHour="200.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+
+    <!-- HƯỚNG TÂY (LD1): Giảm tối đa -->
+    <flow id="f_LD1_right" type="car" begin="0.00" end="3600.00" perHour="200.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_LD1_straight" type="car" begin="0.00" end="3600.00" perHour="300.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_LD1_left" type="car" begin="0.00" end="3600.00" perHour="200.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+
+    <!-- HƯỚNG ĐÔNG (RU1): Giảm tối đa -->
+    <flow id="f_RU1_right" type="car" begin="0.00" end="3600.00" perHour="200.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_RU1_straight" type="car" begin="0.00" end="3600.00" perHour="300.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_RU1_left" type="car" begin="0.00" end="3600.00" perHour="200.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+
+    <!-- 3. TẠO ÙN TẮC CỤC BỘ TẠI HƯỚNG BẮC (UL2) -->
+    <flow id="f_UL2_jam_right" type="car" begin="350.00" end="450.00" perHour="400.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_UL2_jam_straight" type="car" begin="350.00" end="450.00" perHour="1000.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_UL2_jam_left" type="car" begin="350.00" end="450.00" perHour="400.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    
+    <!-- 4. KỊCH BẢN NGOẠI LỆ: Xe cứu thương xuất hiện lúc 500 giây -->
+    <route id="route_emergency_1" edges="UL2 DL2"/>
+    <vehicle id="amb_test_1" type="ambulance" route="route_emergency_1" depart="500.00" departLane="best" departPos="free" departSpeed="max"/>
+
+</routes>

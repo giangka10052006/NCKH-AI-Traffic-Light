@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="13.89"/>
+<!-- old -->
+    <!-- <flow id="f_0" type="car" begin="0.00" end="720.00" perHour="50.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_10" type="car" begin="0.00" end="720.00" perHour="50.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_15" type="car" begin="0.00" end="720.00" perHour="100.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_20" type="car" begin="0.00" end="720.00" perHour="100.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_25" type="car" begin="0.00" end="720.00" perHour="100.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_30" type="car" begin="0.00" end="720.00" perHour="100.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_35" type="car" begin="0.00" end="720.00" perHour="100.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_40" type="car" begin="0.00" end="720.00" perHour="100.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_45" type="car" begin="0.00" end="720.00" perHour="50.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_5" type="car" begin="0.00" end="720.00" perHour="50.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_50" type="car" begin="0.00" end="720.00" perHour="50.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_55" type="car" begin="0.00" end="720.00" perHour="50.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_1" type="car" begin="720.00" end="1440.00" perHour="100.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_11" type="car" begin="720.00" end="1440.00" perHour="100.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_16" type="car" begin="720.00" end="1440.00" perHour="200.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_21" type="car" begin="720.00" end="1440.00" perHour="200.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_26" type="car" begin="720.00" end="1440.00" perHour="200.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_31" type="car" begin="720.00" end="1440.00" perHour="200.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_36" type="car" begin="720.00" end="1440.00" perHour="200.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_41" type="car" begin="720.00" end="1440.00" perHour="200.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_46" type="car" begin="720.00" end="1440.00" perHour="100.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_51" type="car" begin="720.00" end="1440.00" perHour="100.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_56" type="car" begin="720.00" end="1440.00" perHour="100.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_6" type="car" begin="720.00" end="1440.00" perHour="100.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_12" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_17" type="car" begin="1440.00" end="2160.00" perHour="440.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_2" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_22" type="car" begin="1440.00" end="2160.00" perHour="440.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_27" type="car" begin="1440.00" end="2160.00" perHour="440.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_32" type="car" begin="1440.00" end="2160.00" perHour="440.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_37" type="car" begin="1440.00" end="2160.00" perHour="440.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_42" type="car" begin="1440.00" end="2160.00" perHour="440.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_47" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_52" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_57" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_7" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_13" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_18" type="car" begin="2160.00" end="2880.00" perHour="260.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_23" type="car" begin="2160.00" end="2880.00" perHour="260.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_28" type="car" begin="2160.00" end="2880.00" perHour="260.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_3" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_33" type="car" begin="2160.00" end="2880.00" perHour="260.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_38" type="car" begin="2160.00" end="2880.00" perHour="260.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_43" type="car" begin="2160.00" end="2880.00" perHour="260.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_48" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_53" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_58" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_8" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_14" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_19" type="car" begin="2880.00" end="3600.00" perHour="100.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_24" type="car" begin="2880.00" end="3600.00" perHour="100.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_29" type="car" begin="2880.00" end="3600.00" perHour="100.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_34" type="car" begin="2880.00" end="3600.00" perHour="100.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_39" type="car" begin="2880.00" end="3600.00" perHour="100.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_4" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_44" type="car" begin="2880.00" end="3600.00" perHour="100.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_49" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_54" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_59" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_9" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/> -->
+<!-- new -->
+    <flow id="f_0" type="car" begin="0.00" end="720.00" perHour="50.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_10" type="car" begin="0.00" end="720.00" perHour="50.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_15" type="car" begin="0.00" end="720.00" perHour="80.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_20" type="car" begin="0.00" end="720.00" perHour="80.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_25" type="car" begin="0.00" end="720.00" perHour="80.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_30" type="car" begin="0.00" end="720.00" perHour="80.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_35" type="car" begin="0.00" end="720.00" perHour="80.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_40" type="car" begin="0.00" end="720.00" perHour="80.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_45" type="car" begin="0.00" end="720.00" perHour="50.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_5" type="car" begin="0.00" end="720.00" perHour="50.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_50" type="car" begin="0.00" end="720.00" perHour="50.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_55" type="car" begin="0.00" end="720.00" perHour="50.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+
+    <flow id="f_1" type="car" begin="720.00" end="1440.00" perHour="100.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_11" type="car" begin="720.00" end="1440.00" perHour="100.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_16" type="car" begin="720.00" end="1440.00" perHour="160.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_21" type="car" begin="720.00" end="1440.00" perHour="160.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_26" type="car" begin="720.00" end="1440.00" perHour="160.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_31" type="car" begin="720.00" end="1440.00" perHour="160.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_36" type="car" begin="720.00" end="1440.00" perHour="160.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_41" type="car" begin="720.00" end="1440.00" perHour="160.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_46" type="car" begin="720.00" end="1440.00" perHour="100.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_51" type="car" begin="720.00" end="1440.00" perHour="100.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_56" type="car" begin="720.00" end="1440.00" perHour="100.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_6" type="car" begin="720.00" end="1440.00" perHour="100.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+
+    <flow id="f_12" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_17" type="car" begin="1440.00" end="2160.00" perHour="350.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_2" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_22" type="car" begin="1440.00" end="2160.00" perHour="350.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_27" type="car" begin="1440.00" end="2160.00" perHour="350.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_32" type="car" begin="1440.00" end="2160.00" perHour="350.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_37" type="car" begin="1440.00" end="2160.00" perHour="350.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_42" type="car" begin="1440.00" end="2160.00" perHour="350.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_47" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_52" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_57" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_7" type="car" begin="1440.00" end="2160.00" perHour="220.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+
+    <flow id="f_13" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_18" type="car" begin="2160.00" end="2880.00" perHour="200.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_23" type="car" begin="2160.00" end="2880.00" perHour="200.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_28" type="car" begin="2160.00" end="2880.00" perHour="200.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_3" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_33" type="car" begin="2160.00" end="2880.00" perHour="200.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_38" type="car" begin="2160.00" end="2880.00" perHour="200.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_43" type="car" begin="2160.00" end="2880.00" perHour="200.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_48" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_53" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_58" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_8" type="car" begin="2160.00" end="2880.00" perHour="130.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+
+    <flow id="f_14" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_19" type="car" begin="2880.00" end="3600.00" perHour="80.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_24" type="car" begin="2880.00" end="3600.00" perHour="80.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_29" type="car" begin="2880.00" end="3600.00" perHour="80.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_34" type="car" begin="2880.00" end="3600.00" perHour="80.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_39" type="car" begin="2880.00" end="3600.00" perHour="80.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_4" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_44" type="car" begin="2880.00" end="3600.00" perHour="80.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_49" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_54" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_59" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_9" type="car" begin="2880.00" end="3600.00" perHour="50.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+</routes>
