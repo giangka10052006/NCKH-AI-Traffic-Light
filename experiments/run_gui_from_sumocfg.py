@@ -18,8 +18,10 @@ from sumo_rl import SumoEnvironment
 def main():
     # 1. Cấu hình nhận lệnh từ Terminal
     parser = argparse.ArgumentParser()
-    parser.add_argument("--net-file", default="RL.net.xml")
-    parser.add_argument("--route-file", default="RL.rou.xml")
+    parser.add_argument(
+        "--net-file", default=str(REPO_ROOT / "sumo" / "RL.net.xml"))
+    parser.add_argument(
+        "--route-file", default=str(REPO_ROOT / "sumo" / "RL.rou.xml"))
     parser.add_argument("--out-csv", default="ppo_gui_test")
     args = parser.parse_args()
 
@@ -28,24 +30,34 @@ def main():
     experiments_dir = Path(__file__).resolve().parent
     
     # Từ thư mục gốc đó, trỏ tới các file cấu hình tương ứng
-    net_file_path = experiments_dir / args.net_file
-    route_file_path = experiments_dir / args.route_file
+    net_file = args.net_file
+    route_file = args.route_file
     
-    net_file = str(net_file_path)
-    route_file = str(route_file_path)
-    
-    print(f"Net file: {net_file}")
-    print(f"Route file: {route_file}")
+    print("=" * 60)
+    print("CẤU HÌNH CHẠY SUMO-GUI")
+    print("=" * 60)
+
+    print(f"Project root : {REPO_ROOT}")
+    print(f"Net file     : {net_file}")
+    print(f"Route file   : {route_file}")
 
     # Tạo thư mục lưu kết quả tương đối
-    outputs_dir = experiments_dir / "outputs" / "demo_moi"
-    os.makedirs(outputs_dir, exist_ok=True)
+    outputs_dir = REPO_ROOT / "outputs" / "demo_moi"
+
+    outputs_dir.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    out_csv_path = outputs_dir / args.out_csv
+
+    print(f"Output       : {out_csv_path}")
 
     def _make():
         return SumoEnvironment(
             net_file=net_file,
             route_file=route_file,
-            out_csv_name=str(outputs_dir / args.out_csv),
+            out_csv_name=str(out_csv_path),
             single_agent=True,
             use_gui=True,
             num_seconds=9999,
@@ -60,9 +72,13 @@ def main():
     env = DummyVecEnv([_make])
     
     # 3. Trỏ tới model bằng đường dẫn tương đối
-    models_dir = experiments_dir / "models"
-    vecnorm_path = models_dir / "vecnormalize.pkl"
+    models_dir = REPO_ROOT / "models"
+
     model_path = models_dir / "ppo_brain.zip"
+    vecnorm_path = models_dir / "vecnormalize.pkl"
+
+    print(f"Model        : {model_path}")
+    print(f"VecNormalize : {vecnorm_path}")
 
     if vecnorm_path.exists():
         env = VecNormalize.load(str(vecnorm_path), env)
