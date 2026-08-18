@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!-- Author: Tong Chi Cao -->
+<!-- Scenario: Off-Peak Hour Traffic (Responsiveness Testing) -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="13.89"/>
+
+    <!-- Lượng xe cực thấp. Trung bình chỉ 20-30 xe/h mỗi hướng -->
+    
+    <!-- West to East (LD1) -->
+    <flow id="f_LD1_right" type="car" begin="0.00" end="3600.00" perHour="10.00" from="LD1" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_LD1_straight" type="car" begin="0.00" end="3600.00" perHour="30.00" from="LD1" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_LD1_left" type="car" begin="0.00" end="3600.00" perHour="10.00" from="LD1" to="UR2" departLane="best" departSpeed="max"/>
+
+    <!-- North to South (UL2) -->
+    <flow id="f_UL2_right" type="car" begin="0.00" end="3600.00" perHour="10.00" from="UL2" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_UL2_straight" type="car" begin="0.00" end="3600.00" perHour="30.00" from="UL2" to="DL2" departLane="best" departSpeed="max"/>
+    <flow id="f_UL2_left" type="car" begin="0.00" end="3600.00" perHour="10.00" from="UL2" to="RD1" departLane="best" departSpeed="max"/>
+
+    <!-- South to North (DR2) -->
+    <flow id="f_DR2_right" type="car" begin="0.00" end="3600.00" perHour="10.00" from="DR2" to="RD1" departLane="best" departSpeed="max"/>
+    <flow id="f_DR2_straight" type="car" begin="0.00" end="3600.00" perHour="30.00" from="DR2" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_DR2_left" type="car" begin="0.00" end="3600.00" perHour="10.00" from="DR2" to="LU1" departLane="best" departSpeed="max"/>
+
+    <!-- East to West (RU1) -->
+    <flow id="f_RU1_right" type="car" begin="0.00" end="3600.00" perHour="10.00" from="RU1" to="UR2" departLane="best" departSpeed="max"/>
+    <flow id="f_RU1_straight" type="car" begin="0.00" end="3600.00" perHour="30.00" from="RU1" to="LU1" departLane="best" departSpeed="max"/>
+    <flow id="f_RU1_left" type="car" begin="0.00" end="3600.00" perHour="10.00" from="RU1" to="DL2" departLane="best" departSpeed="max"/>
+</routes>
